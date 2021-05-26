@@ -1,9 +1,16 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import TodoWrap from './components/TodoWrap'
+import TodoList from './components/TodList'
+import TodoCreate from './components/TodoCreate'
+import TodoHead from './components/TodoHead'
+import TodoTemplate from './components/TodoTemplate'
 function App() {
   return (
     <WrapApp>
-      <TodoWrap />
+      <TodoTemplate>
+        <TodoHead />
+        <TodoList />
+        <TodoCreate />
+      </TodoTemplate>
       <GlobalStyle />
     </WrapApp>
   )
@@ -24,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
 html,
 body {
   font-size: 12px;
+  background: #e9ecef;
 }
 
 `
