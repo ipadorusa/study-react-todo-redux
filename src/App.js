@@ -1,26 +1,25 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
+import { TodoProvider } from './components/TodoContext'
 import TodoList from './components/TodList'
 import TodoCreate from './components/TodoCreate'
 import TodoHead from './components/TodoHead'
 import TodoTemplate from './components/TodoTemplate'
+
 function App() {
   return (
-    <WrapApp>
+    <TodoProvider>
       <TodoTemplate>
         <TodoHead />
         <TodoList />
         <TodoCreate />
       </TodoTemplate>
       <GlobalStyle />
-    </WrapApp>
+    </TodoProvider>
   )
 }
 
 export default App
 
-const WrapApp = styled.div`
-  display: flex;
-`
 const GlobalStyle = createGlobalStyle`
 * {
   margin: 0;
